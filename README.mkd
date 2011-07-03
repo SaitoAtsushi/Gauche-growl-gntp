@@ -15,7 +15,7 @@ Gauche-growl-gntp is BSD style license. See also COPYING.
 Installation:
 --------
 Gauche-growl-gntp requires following libraries.
-> * Gauche-rfc-uuid
+ * Gauche-rfc-uuid
 
 >     $ hg clone https://bitbucket.org/yuzawat/gauche-rfc-uuid
 >     $ sudo cp gauche-rfc-uuid/rfc/uuid.scm /path/to/your/gauche/rfc/library/
@@ -23,7 +23,7 @@ Gauche-growl-gntp requires following libraries.
 >     $ cd gauche-growl-gntp
 >     $ vim Makefile
 >     Edit GAUCHE and GAUCHE_LIB_PATH macros according to your environment.
->     $ make install
+>     $ sudo make install
 
 Usage:
 -------
