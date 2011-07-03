@@ -1,0 +1,30 @@
+Gauche-growl-gntp
+-----
+Gauche-growl-gntp is a library for Growl(GNTP).
+This library is written mainly for notifying to gol(growl for linux http://mattn.github.com/growl-for-linux/).
+Currently, this library does not support SUBSCRIBE messagetype yet.
+
+Author:
+-------
+Shinnya <shinnyajp@gmail.com>
+
+License:
+-------
+Gauche-growl-gntp is BSD style license. See also COPYING.
+
+Installation:
+--------
+Gauche-growl-gntp requires following libraries.
+ * Gauche-rfc-uuid
+
+> $ hg clone https://bitbucket.org/yuzawat/gauche-rfc-uuid
+> $ sudo cp gauche-rfc-uuid/rfc/uuid.scm /path/to/your/gauche/rfc/library/
+> $ git clone git://github.com/Shinnya/gauche-growl-gntp.git
+> $ cd gauche-growl-gntp
+> $ vim Makefile
+> Edit GAUCHE and GAUCHE_LIB_PATH macros according to your environment.
+> # make install
+
+Usage:
+-------
+See sample/sample.scm
