@@ -23,7 +23,7 @@ Gauche-growl-gntp requires following libraries.
 > $ cd gauche-growl-gntp
 > $ vim Makefile
 > Edit GAUCHE and GAUCHE_LIB_PATH macros according to your environment.
-> # make install
+> $ make install
 
 Usage:
 -------
