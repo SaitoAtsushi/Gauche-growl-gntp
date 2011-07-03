@@ -1,4 +1,4 @@
-(dllllkkkkkkklefine-module growl.gntp
+(define-module growl.gntp
   (use math.mt-random)
   (use rfc.md5)
   (use rfc.sha)
