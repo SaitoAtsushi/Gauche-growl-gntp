@@ -309,7 +309,7 @@
                                  (args '("" . "")))
                              (for-each
                               (lambda (line)
-                                (rx-match-case line
+                                (rxmatch-case line
                                                (#/^Notification-Title: (.*)\r\n/ (title)
                                                                        (set-car! args title))
                                                (#/^Notification-Text: (.*)\r\n/ (text)
