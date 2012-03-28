@@ -1,0 +1,42 @@
+# General info
+SHELL       = @SHELL@
+prefix      = @prefix@
+datadir     = @datadir@
+datarootdir = @datarootdir@
+srcdir      = @srcdir@/src
+VPATH       = $(srcdir)
+
+# These may be overridden by make invocators
+DESTDIR        =
+INSTALL        = "@GAUCHE_INSTALL@" -C
+
+# Module-specific stuff
+PACKAGE   = growl
+
+SCMFILES  = growl/gntp.scm
+
+TARGET    = 
+GENERATED = 
+CONFIG_GENERATED = Makefile config.cache config.log config.status \
+		   configure.lineno autom4te*.cache $(PACKAGE).gpd
+
+GAUCHE_PKGLIBDIR  = "$(DESTDIR)@GAUCHE_PKGLIBDIR@"
+
+all :
+
+install : all
+	$(INSTALL) -m 444 -T $(GAUCHE_PKGLIBDIR) -S $(srcdir) $(SCMFILES) 
+	$(INSTALL) -m 444 -T $(GAUCHE_PKGLIBDIR)/.packages $(PACKAGE).gpd
+
+uninstall :
+	$(INSTALL) -U $(GAUCHE_PKGLIBDIR) $(SCMFILES) 
+	$(INSTALL) -U $(GAUCHE_PKGLIBDIR)/.packages $(PACKAGE).gpd
+
+clean :
+
+distclean : clean
+	rm -rf $(CONFIG_GENERATED)
+
+maintainer-clean : clean
+	rm -rf $(CONFIG_GENERATED) configure
+
