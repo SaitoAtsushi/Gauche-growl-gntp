@@ -89,11 +89,11 @@
 
 (define (generate-hashed-string string hash-algorithm)
   (cond
-   ((equal? hash-algorithm "MD5") (md5-digest-string string)
-    ((equal? hash-algorithm "SHA1") (sha1-digest-string string))
-    ((equal? hash-algorithm "SHA256") (sha256-digest-string string))
-    ((equal? hash-algorithm "SHA512") (sha512-digest-string string))
-    (else (error "no such hash algorithm.")))))
+   ((equal? hash-algorithm "MD5") (md5-digest-string string))
+   ((equal? hash-algorithm "SHA1") (sha1-digest-string string))
+   ((equal? hash-algorithm "SHA256") (sha256-digest-string string))
+   ((equal? hash-algorithm "SHA512") (sha512-digest-string string))
+   (else (error "no such hash algorithm."))))
 
 (define (generate-salt)
   (let* ((count 10)
