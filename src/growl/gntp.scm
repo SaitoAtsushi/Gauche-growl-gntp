@@ -257,6 +257,7 @@
     (call-with-client-socket (make-client-socket 'inet (host-of growl-gntp) (port-of growl-gntp))
       (lambda (in out)
         (format out request)
+        (display "\r\n" out)
         (flush out)
         (let1 response-lines (port->string-list in)
           (if (debug-of growl-gntp)
@@ -276,6 +277,7 @@
     (call-with-client-socket (make-client-socket 'inet (host-of growl-gntp) (port-of growl-gntp))
       (lambda (in out)
         (format out request)
+        (display "\r\n" out)
         (flush out)
         (let1 response-lines (port->string-list in)
           (if (debug-of growl-gntp)
@@ -298,6 +300,7 @@
     (call-with-client-socket client-socket
       (lambda (in out)
         (format out request)
+        (display "\r\n" out)
         (flush out)
         (rxmatch-case (read-line in)
           (#/^GNTP\/1\.0 -ERROR (.*)$/ (message)
