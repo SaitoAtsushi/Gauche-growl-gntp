@@ -122,7 +122,7 @@
      ((and (equal? (string-length password) 0)
            (equal? encrypt-algorithm "NONE")) "")
      (else
-      #`" ,hash-algorithm:,(generate-keyhash password salt hash-algorithm).,(digest-hexify salt)"))))
+      #`" ,|hash-algorithm|:,(generate-keyhash password salt hash-algorithm).,(digest-hexify salt)"))))
 
 (define (growl-header-field->header-field growl-header-field)
   (crlf->cr (string-append (field-name-of growl-header-field)
